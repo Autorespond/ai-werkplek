@@ -1,0 +1,4 @@
+{
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": ["autorespond-crm", "autorespond-boards", "autorespond-formulieren"]
+}
