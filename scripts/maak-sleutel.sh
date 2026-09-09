@@ -9,7 +9,7 @@ PASS="$(printf '%s' "$PASS" | tr -d ' ')"
 AUTH="Basic $(printf '%s:%s' "$USER_" "$PASS" | base64 | tr -d '\n')"; PASS=""
 INIT='{"jsonrpc":"2.0","id":0,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"maak-sleutel","version":"1"}}}'
 OK=0
-for k in "CRM en e-mail|/wp-json/fluent-crm/mcp" "Projecten en taken|/wp-json/fluent-boards/mcp" "Formulieren|/wp-json/fluentform/mcp"; do
+for k in "CRM en e-mail|/wp-json/fluent-crm/mcp" "Projecten en taken|/wp-json/fluent-boards/mcp" "Formulieren|/wp-json/fluentform/mcp" "Afspraken (staat standaard uit)|/wp-json/fluent-booking/mcp"; do
   label="${k%%|*}"; path="${k##*|}"
   code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$SITE$path" -H "Authorization: $AUTH" -H 'Accept: application/json, text/event-stream' -H 'Content-Type: application/json' -d "$INIT")
   if [ "$code" = "200" ]; then OK=$((OK+1)); echo "  OK   $label"; else echo "  $code  $label  (401 = gebruikersnaam of wachtwoord onjuist; 403 = geen rechten; 404 = koppeling staat uit)"; fi

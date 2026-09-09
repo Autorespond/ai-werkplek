@@ -24,7 +24,14 @@ of de tag "klant" aanwezig is en voeg die toe als hij ontbreekt. Zet bij elk con
 "Bestelling [datum]: [product]". Maak voor bestellingen boven de 250 euro een taak "Persoonlijk bedankje
 sturen" aan op het board "Klanten". Eindig met een lijst van de contacten die je hebt bijgewerkt.
 
-## 4. Inactieve lezers signaleren (elke eerste van de maand)
+## 4. Afsprakenbriefing (werkdagen 07:30)
+Lees eerst CLAUDE.md. Geef een overzicht van de afspraken van vandaag en morgen: per afspraak het type,
+de tijd, de host en of de deelnemer bevestigd heeft. Noem afspraken van gisteren die op "no show" staan
+en zet voor elk daarvan een taak "Opvolgen no-show" op het board "Klanten". Controleer met de
+beschikbaarheidsdiagnose of het kennismakingsgesprek de komende twee weken vrije tijden heeft en meld
+het als dat niet zo is. Verzet of annuleer niets.
+
+## 5. Inactieve lezers signaleren (elke eerste van de maand)
 Lees eerst CLAUDE.md. Zoek nieuwsbrieflezers die de laatste zes verzonden campagnes niet hebben geopend.
 Geef ze de tag "Inactief" (maak die aan als hij ontbreekt) en haal de tag weg bij lezers die in de
 afgelopen maand wél iets openden. Rapporteer de aantallen en verstuur niets.

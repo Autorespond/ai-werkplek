@@ -9,8 +9,9 @@ kennisbank, community en cursussen.
    https://raw.githubusercontent.com/Autorespond/ai-context/main/AUTORESPOND-AI-CONTEXT.md
    Daarin staan de spelregels, de menunamen en waar de documentatie staat. Volg die.
 2. Haal de context op van de koppelingen die in dit gesprek beschikbaar zijn (de tools die beginnen met
-   `fluent-crm-`, `fluent-boards-` en `fluentform-`). Meld kort welke koppelingen werken en welke rechten
-   de gekoppelde gebruiker heeft. Werkt een koppeling niet, zeg dat dan en ga door met wat wél werkt.
+   `fluent-crm-`, `fluent-boards-`, `fluentform-` en `fluent-booking-`). Meld kort welke koppelingen werken
+   en welke rechten de gekoppelde gebruiker heeft. Werkt een koppeling niet (bijvoorbeeld afspraken, die
+   staat standaard uit), zeg dat dan en ga door met wat wél werkt.
 
 ## Koppelingen
 De koppelingen in `.mcp.json` lezen het adres van de site en de inloggegevens uit de omgevingsvariabelen

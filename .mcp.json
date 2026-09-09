@@ -14,6 +14,11 @@
       "type": "http",
       "url": "${AR_SITE_URL}/wp-json/fluentform/mcp",
       "headers": { "Authorization": "${AR_MCP_AUTH}" }
+    },
+    "autorespond-afspraken": {
+      "type": "http",
+      "url": "${AR_SITE_URL}/wp-json/fluent-booking/mcp",
+      "headers": { "Authorization": "${AR_MCP_AUTH}" }
     }
   }
 }

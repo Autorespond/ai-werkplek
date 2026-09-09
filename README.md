@@ -4,6 +4,8 @@ Startpakket om je Autorespond te koppelen aan Claude **in de browser** (claude.a
 virtuele assistent. Werkt ook voor **routines**: taken die Claude automatisch uitvoert op vaste tijden,
 ook als je computer uit staat.
 
+De koppelingen: CRM en e-mail, projecten en taken, formulieren en (sinds september 2026) afspraken.
+
 Er staat niets geheims in dit pakket. Het bevat alleen de adressen van de koppelingen en spelregels voor
 de AI. Je eigen inloggegevens zet je in je eigen Claude-omgeving; die verlaten je account niet.
 

@@ -15,7 +15,7 @@ $plain = $plain -replace '\s', ''
 $auth = 'Basic ' + [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes("$User`:$plain")); $plain = $null
 $init = '{"jsonrpc":"2.0","id":0,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"maak-sleutel","version":"1"}}}'
 $ok = 0
-foreach ($k in @(@('CRM en e-mail', '/wp-json/fluent-crm/mcp'), @('Projecten en taken', '/wp-json/fluent-boards/mcp'), @('Formulieren', '/wp-json/fluentform/mcp'))) {
+foreach ($k in @(@('CRM en e-mail', '/wp-json/fluent-crm/mcp'), @('Projecten en taken', '/wp-json/fluent-boards/mcp'), @('Formulieren', '/wp-json/fluentform/mcp'), @('Afspraken (staat standaard uit)', '/wp-json/fluent-booking/mcp'))) {
   try {
     $r = Invoke-WebRequest -Method Post -Uri ($Site + $k[1]) -Headers @{ Authorization = $auth; Accept = 'application/json, text/event-stream'; 'Content-Type' = 'application/json' } -Body $init -UseBasicParsing
     if ($r.StatusCode -eq 200) { $ok++; Write-Host ("  OK   " + $k[0]) } else { Write-Host ("  " + $r.StatusCode + "  " + $k[0]) }
