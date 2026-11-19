@@ -21,7 +21,7 @@ foreach ($k in @(@('CRM en e-mail', '/wp-json/fluent-crm/mcp'), @('Projecten en 
     if ($r.StatusCode -eq 200) { $ok++; Write-Host ("  OK   " + $k[0]) } else { Write-Host ("  " + $r.StatusCode + "  " + $k[0]) }
   } catch {
     $code = '???'; if ($_.Exception.Response) { $code = [int]$_.Exception.Response.StatusCode }
-    Write-Host ("  " + $code + "  " + $k[0] + "  (401 = gebruikersnaam of wachtwoord onjuist; 403 = geen rechten; 404 = koppeling staat uit)")
+    Write-Host ("  " + $code + "  " + $k[0] + "  (401 = gebruikersnaam of wachtwoord onjuist; 403 = geen rechten; bij boards: zet in Projectmanagement > Instellingen > MCP voor AI-agent ook 'Bordleden toestaan MCP te gebruiken' aan; 404 = koppeling staat uit)")
   }
 }
 if ($ok -eq 0) { Write-Host "Geen enkele koppeling werkt. Controleer het adres, de gebruikersnaam en het applicatiewachtwoord."; exit 1 }

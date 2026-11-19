@@ -12,7 +12,7 @@ OK=0
 for k in "CRM en e-mail|/wp-json/fluent-crm/mcp" "Projecten en taken|/wp-json/fluent-boards/mcp" "Formulieren|/wp-json/fluentform/mcp" "Afspraken (staat standaard uit)|/wp-json/fluent-booking/mcp"; do
   label="${k%%|*}"; path="${k##*|}"
   code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$SITE$path" -H "Authorization: $AUTH" -H 'Accept: application/json, text/event-stream' -H 'Content-Type: application/json' -d "$INIT")
-  if [ "$code" = "200" ]; then OK=$((OK+1)); echo "  OK   $label"; else echo "  $code  $label  (401 = gebruikersnaam of wachtwoord onjuist; 403 = geen rechten; 404 = koppeling staat uit)"; fi
+  if [ "$code" = "200" ]; then OK=$((OK+1)); echo "  OK   $label"; else echo "  $code  $label  (401 = gebruikersnaam of wachtwoord onjuist; 403 = geen rechten; bij boards: zet in Projectmanagement > Instellingen > MCP voor AI-agent ook 'Bordleden toestaan MCP te gebruiken' aan; 404 = koppeling staat uit)"; fi
 done
 if [ "$OK" = "0" ]; then echo "Geen enkele koppeling werkt. Controleer het adres, de gebruikersnaam en het applicatiewachtwoord."; exit 1; fi
 echo; echo "Zet in je Claude-omgeving deze twee variabelen:"; echo
